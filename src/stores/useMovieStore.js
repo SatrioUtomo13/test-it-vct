@@ -14,7 +14,7 @@ export const useMovieStore = defineStore('movie', {
             this.error = null
 
             try {
-                const response = await axios.get(`http://www.omdbapi.com/?apikey=e750c71b&s=${query}`)
+                const response = await axios.get(`https://www.omdbapi.com/?apikey=e750c71b&s=${query}`)
 
                 if (response.data.Response === 'True') {
                     this.movies = response.data.Search
@@ -31,7 +31,7 @@ export const useMovieStore = defineStore('movie', {
         async fetchMovieDetail(imdbID) {
             this.loading = true
             try {
-                const response = await axios.get(`http://www.omdbapi.com/?apikey=e750c71b&i=${imdbID}`)
+                const response = await axios.get(`https://www.omdbapi.com/?apikey=e750c71b&i=${imdbID}`)
                 this.movieDetail = response.data
                 this.error = null
             } catch (error) {
